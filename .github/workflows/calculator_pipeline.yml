@@ -28,7 +28,7 @@ jobs:
       - name: login to azure registery
         uses: docker/login-action@v2
         with:
-          registery: judevops.azurecr.io
+          registry: judevops.azurecr.io
           username: ${{ secrets.azure_user_name }}
           password: ${{ secrets.azure_password }}
 
