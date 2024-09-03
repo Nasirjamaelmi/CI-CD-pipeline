@@ -30,7 +30,7 @@ jobs:
         with:
           registry: judevops.azurecr.io
           username: ${{ secrets.AZURE_REGISTRY_USERNAME }}
-          password: ${{ secrets.AZURE_REGISTRY_PASSWORDs }}
+          password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
 
       # Runs a single command using the runners shell
       
