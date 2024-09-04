@@ -35,6 +35,7 @@ class CalculatorHelper():
     def add(self, a, b):
         result = a + b
         self.logger.debug(f"Adding {a} and {b} = {result}", extra=self.log_properties)
+        print("nasir")
         return result
 
     def subtract(self, a, b):
@@ -46,7 +47,7 @@ class CalculatorHelper():
         result =  a * b
         self.logger.debug(f"multiplication {a} times {b} = {result}", extra=self.log_properties)
         return result
-
+  
     def divide(self, a, b):
         result = a / b
         self.logger.debug(f"divison {a} divide with {b} = {result}", extra=self.log_properties)
