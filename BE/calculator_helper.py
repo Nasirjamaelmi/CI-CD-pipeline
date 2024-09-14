@@ -1,4 +1,4 @@
-import logger
+
 
 class CalculatorHelper():
     log_properties = {
@@ -22,8 +22,7 @@ class CalculatorHelper():
             admin = self.User('admin','test1234')
             self._user_list.append(admin)
             self._is_initialized = True
-            self.logger = logger.get_logger(__name__)
-
+            
     class User():
         def __init__(self, username, password):
             self.username = username
@@ -34,23 +33,19 @@ class CalculatorHelper():
 
     def add(self, a, b):
         result = a + b
-        self.logger.debug(f"Adding {a} and {b} = {result}", extra=self.log_properties)
-        print("nasir")
+        
         return result
 
     def subtract(self, a, b):
         result = a - b
-        self.logger.debug(f"Subtraction  {a} minus {b} = {result}", extra=self.log_properties)
         return result
     
     def multiply(self, a, b):
         result =  a * b
-        self.logger.debug(f"multiplication {a} times {b} = {result}", extra=self.log_properties)
         return result
   
     def divide(self, a, b):
         result = a / b
-        self.logger.debug(f"divison {a} divide with {b} = {result}", extra=self.log_properties)
         return result
 
     def register_user(self, username, password):
@@ -59,21 +54,18 @@ class CalculatorHelper():
                 return None
         user = self.User(username, password)
         self._user_list.append(user)
-        self.logger.debug(f"{username} has been registered")
         return username
 
     def login(self, username, password):
         for user in self._user_list:
             if(user.username == username and user.password == password):
                 self._current_user = user
-                self.logger.debug(f"{username} is logged in")
                 return username
         return None
 
     def logout(self):   
         user = self._current_user
         self._current_user = None
-        self.logger.debug(f" {user} is logging out")
         return user
 
     def get_current_user(self):
