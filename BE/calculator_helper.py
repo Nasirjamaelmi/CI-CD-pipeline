@@ -1,5 +1,6 @@
 
 
+
 class CalculatorHelper():
     log_properties = {
         'custom_dimensions': {
@@ -10,6 +11,14 @@ class CalculatorHelper():
     _instance = None
     _is_initialized = False
 
+    def setup_method(self):
+        print("initated setup")
+        self.calc_helper = CalculatorHelper
+        
+    def teardown_method(self):
+        print("teardown")
+        self.calc_helper = None
+        
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super(CalculatorHelper, cls).__new__(cls)

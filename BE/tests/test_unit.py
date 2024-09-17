@@ -1,6 +1,5 @@
-from BE.calculator_helper import CalculatorHelper
-from assertpy import assert_that
 
+from BE.calculator_helper import CalculatorHelper
 
 class TestCalculator():
     def test_add(self):
@@ -11,8 +10,7 @@ class TestCalculator():
 
         assert value == 2, "Expected result to be 2"
         my_name = 'Nasir jama elmi'
-        assert_that(value).is_equal_to(2)
-        assert_that(my_name).is_length(15).starts_with('N').ends_with('elmi')
+       
 
     def test_sub(self):
         #ARRANGE
