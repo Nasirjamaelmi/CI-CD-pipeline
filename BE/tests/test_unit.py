@@ -1,5 +1,5 @@
 
-from BE.calculator_helper import CalculatorHelper
+from  ..calculator_helper import CalculatorHelper
 
 class TestCalculator():
     def test_add(self):
