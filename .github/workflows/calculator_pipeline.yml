@@ -25,6 +25,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 
       - name: setup Python
+         env:
+          PYTHONPATH: ./BE
         uses: actions/checkout@v2
         with:
           python-version: "3.9"
@@ -36,8 +38,6 @@ jobs:
         run: python BE/calculator.py --rest &
 
       - name: run pytest
-        env:
-          PYTHONPATH: ./BE
         run: pytest --junit-xml=report.xml
 
       - name: Publish Test Report
