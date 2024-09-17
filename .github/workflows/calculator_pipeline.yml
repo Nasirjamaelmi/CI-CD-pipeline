@@ -34,7 +34,7 @@ jobs:
 
       - name: install Rest api
         run: python BE/calculator.py --rest &
-        
+
       - name: run pytest
         env:
           PYTHONPATH: ${{ github.workspace }}/BE

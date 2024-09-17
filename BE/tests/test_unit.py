@@ -1,7 +1,24 @@
-
+import pytest
 from BE.calculator_helper import CalculatorHelper
 
 class TestCalculator():
+
+
+
+   #fråga om parametrize and enviroment python path i github
+    @pytest.mark.parametrize("a, b, expected", [
+        (1, 1, 2),
+        (2, 3, 5),
+        (10, 5, 15),
+        (0, 0, 0),
+        (-1, -1, -2)
+    ])
+    
+    def test_add(a, b, expected):
+        calc = CalculatorHelper()
+        result = calc.add(a, b)
+        assert result == expected
+            
     def test_add(self):
         #ARRANGE
         calculator = CalculatorHelper()
