@@ -30,7 +30,7 @@ jobs:
           python-version: "3.9"
 
       - name: install dependies
-        run: pip install -r BE/requirement.txt
+        run: pip install -r BE/requirements.txt.txt
 
       - name: install Rest api
         run: python BE/calculator.py --rest &
