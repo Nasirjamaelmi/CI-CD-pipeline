@@ -34,13 +34,10 @@ jobs:
 
       - name: install Rest api
         run: python BE/calculator.py --rest &
-
-
-      - name: install pytest
+        
+      - name: run pytest
         env:
           PYTHONPATH: ./BE/tests
-
-      - name: run pytest
         run: pytest --junit-xml=report.xml
 
       - name: Publish Test Report
