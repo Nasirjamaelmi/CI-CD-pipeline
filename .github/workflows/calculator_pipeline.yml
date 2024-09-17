@@ -31,13 +31,18 @@ jobs:
 
       - name: install dependies
         run: pip install -r BE/requirement.txt
+        run: pip install -r BE/requirements.txt
 
       - name: install Rest api
         run: python BE/calculator.py --rest &
 
+<<<<<<< HEAD
       - name: install pytest
         env:
           PYTHONPATH: ./BE/tests
+=======
+      - name: run pytest
+>>>>>>> 316b731db5eed8cd47690df559a597dfca0e3fdc
         run: pytest --junit-xml=report.xml
 
       - name: Publish Test Report
