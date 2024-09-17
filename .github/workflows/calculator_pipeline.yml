@@ -36,6 +36,8 @@ jobs:
         run: python BE/calculator.py --rest &
 
       - name: run pytest
+        env: 
+          PYTHONPATH= ./BE
         run: pytest --junit-xml=report.xml
 
       - name: Publish Test Report
