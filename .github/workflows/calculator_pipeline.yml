@@ -25,8 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 
       - name: setup Python
-         env:
-          PYTHONPATH: ./BE
         uses: actions/checkout@v2
         with:
           python-version: "3.9"
