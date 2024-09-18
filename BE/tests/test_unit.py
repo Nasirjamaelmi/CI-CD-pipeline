@@ -6,7 +6,7 @@ class TestCalculator():
 
 
    #fråga om parametrize and enviroment python path i github
-    @pytest.mark.parametrize("a, b, expected", [
+    @pytest.mark.parametrize("a, b, result", [
         (1, 1, 2),
         (2, 3, 5),
         (10, 5, 15),
@@ -14,10 +14,10 @@ class TestCalculator():
         (-1, -1, -2)
     ])
     
-    def test_add(a, b, expected):
+    def test_add(a, b, result):
         calc = CalculatorHelper()
-        result = calc.add(a, b)
-        assert result == expected
+        value = calc.add(a, b)
+        assert value == result
             
     def test_add(self):
         #ARRANGE

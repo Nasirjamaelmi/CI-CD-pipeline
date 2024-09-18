@@ -17,6 +17,8 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    env:
+    PYTHONPATH: ./
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -36,8 +38,7 @@ jobs:
         run: python BE/calculator.py --rest &
 
       - name: run pytest
-        run: | 
-         echo "PYTHONPATH=$PYTHONPATH:$(pwd)/BE" >> $GITHUB_ENV
+        run: python pytest --junit-xml=report.xml
 
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
