@@ -38,7 +38,7 @@ jobs:
         run: python BE/calculator.py --rest &
 
       - name: run pytest
-        run: python pytest --junit-xml=report.xml
+        run:  pytest --junit-xml=report.xml
 
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
