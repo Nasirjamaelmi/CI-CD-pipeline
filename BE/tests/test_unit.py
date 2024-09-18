@@ -1,7 +1,7 @@
 import pytest
 from BE.calculator_helper import CalculatorHelper
-
-class TestCalculator():
+from BE.tests.testbase import CalculatorUnitTestBase
+class TestCalculator(CalculatorUnitTestBase):
 
 
 
