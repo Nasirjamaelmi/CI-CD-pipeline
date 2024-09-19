@@ -5,5 +5,5 @@ class CalculatorUnitTestBase():
     def setup_class(cls):
         cls.calculator = CalculatorHelper()
 
-    def setup_class(cls):
+    def teardown_class(cls):
         cls.calculator = None

@@ -1,9 +1,10 @@
 from calculator_client.client import Client
 
-class CalculatorUnitTestBase():
+class CalculatorUnitTestBaseAPI():
     @classmethod
     def setup_class(cls):
-        cls.client =  Client(base_url="http://localhost:5001/calculate")
+        cls.client =  Client(base_url="http://localhost:5001")
 
-    def setup_class(cls):
-        cls.client = None
+    def teardown_class(cls):
+        pass
+        # cls.client = None
