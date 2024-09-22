@@ -6,5 +6,4 @@ class CalculatorUnitTestBaseAPI():
         cls.client =  Client(base_url="http://localhost:5001")
 
     def teardown_class(cls):
-        pass
-        # cls.client = None
+        cls.client = None
