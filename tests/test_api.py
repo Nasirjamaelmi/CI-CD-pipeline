@@ -4,7 +4,7 @@ from calculator_client.api.actions import calculate
 from calculator_client.models.calculation import Calculation
 from calculator_client.models.opertions import Opertions
 from calculator_client.models import ResultResponse
-from tests.testbase_api import CalculatorUnitTestBaseAPI
+from testbase_api import CalculatorUnitTestBaseAPI
 
 class TestCalculatorAPI(CalculatorUnitTestBaseAPI):
    

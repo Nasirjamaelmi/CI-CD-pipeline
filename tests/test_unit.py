@@ -1,5 +1,5 @@
 import pytest
-from .testbase import CalculatorUnitTestBase
+from testbase import CalculatorUnitTestBase
 class TestCalculator(CalculatorUnitTestBase):
 
    #fråga om parametrize and enviroment python path i github
