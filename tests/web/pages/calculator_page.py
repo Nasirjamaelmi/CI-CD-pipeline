@@ -1,5 +1,5 @@
-from assignment_1_calculator_2024.tests.web.pages.page_base import PageBase
-from assignment_1_calculator_2024.tests.web.helpers.element import Element
+from tests.web.pages.page_base import PageBase
+from tests.web.helpers.element import Element
 from munch import munchify
 
 
@@ -17,7 +17,7 @@ class CalculatorPage(PageBase):
             'equal':   Element('//*[@id="key-equals"]', self),
             'show': Element('//*[@id="toggle-button"]',self),
             'result': Element('//*[@id="history"]', self),
-           
+            'logout' : Element('//*[@id="logout-button"]', self),
             '0': Element('//*[@id="key-0"]', self),
             '1': Element('//*[@id="key-1"]', self),
             '2': Element('//*[@id="key-2"]', self),
@@ -29,8 +29,6 @@ class CalculatorPage(PageBase):
             '8': Element('//*[@id="key-8"]', self),
             '9': Element('//*[@id="key-9"]', self)
         
-       
-            
         }
         
         self.elements = munchify(page_elements)
@@ -86,10 +84,7 @@ class CalculatorPage(PageBase):
         self.elements.show.click()
     
         
-        
     
-        
-       
         
      
     

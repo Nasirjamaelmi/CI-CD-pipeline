@@ -1,5 +1,5 @@
-from assignment_1_calculator_2024.tests.web.pages.page_base import PageBase
-from assignment_1_calculator_2024.tests.web.helpers.element import Element
+from tests.web.pages.page_base import PageBase
+from tests.web.helpers.element import Element
 from munch import munchify
 
 
@@ -13,7 +13,6 @@ class LoginPage(PageBase):
             'login': Element('//button[@id="login"]', self),
             'register': Element('//button[@id="register"]', self)
         }
-
         self.elements = munchify(self.page_elements)
     
     def login(self, username, password):
