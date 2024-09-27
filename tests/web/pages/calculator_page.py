@@ -1,5 +1,5 @@
-from assignment_1_calculator_2024.tests.web.pages.page_base import PageBase
-from assignment_1_calculator_2024.tests.web.helpers.element import Element
+from tests.web.pages.page_base import PageBase
+from tests.web.helpers.element import Element
 from munch import munchify
 
 
@@ -8,7 +8,7 @@ class CalculatorPage(PageBase):
         PageBase.__init__(self, driver = driver)
         
         page_elements = {
-            'username': Element('//input[@id="username"]',self),
+            'username': Element('//*[@id="user-name"]',self),
             'screen': Element('//*[@id="calculator-screen"]',self),
             'add': Element('//*[@id="key-add"]',self),
             'subtract': Element('//*[@id="key-subtract"]',self),
@@ -17,7 +17,6 @@ class CalculatorPage(PageBase):
             'equal':   Element('//*[@id="key-equals"]', self),
             'show': Element('//*[@id="toggle-button"]',self),
             'result': Element('//*[@id="history"]', self),
-           
             '0': Element('//*[@id="key-0"]', self),
             '1': Element('//*[@id="key-1"]', self),
             '2': Element('//*[@id="key-2"]', self),
@@ -30,7 +29,7 @@ class CalculatorPage(PageBase):
             '9': Element('//*[@id="key-9"]', self)
         
        
-            
+               
         }
         
         self.elements = munchify(page_elements)
