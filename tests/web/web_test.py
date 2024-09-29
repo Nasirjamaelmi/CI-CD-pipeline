@@ -16,6 +16,7 @@ class TestWeb(WebBase):
 
     def test_login(self):
         LoginPage(self.driver).login('admin', 'test1234')
+        time.sleep(10)
         assert_that(CalculatorPage(self.driver).elements.username.text).is_equal_to('admin')
         
         
@@ -44,24 +45,24 @@ class TestWeb(WebBase):
         assert_that(int(calculator.elements.screen.value)).is_equal_to(50)
         
 
-    # def test_verify(self):
-    #     loginPage = LoginPage(self.driver)
-    #     loginPage.login('admin', 'test1234')
-    #     calculator = CalculatorPage(self.driver)
-    #     calculator.addition('5','5')
-    #     time.sleep(2) 
-    #     assert int(calculator.elements.screen.value) == 10
-    #     calculator.subtract('9','4')
-    #     time.sleep(2) 
-    #     assert int(calculator.elements.screen.value) == 5
-    #     calculator.multiple('5','5')
-    #     time.sleep(2) 
-    #     assert int(calculator.elements.screen.value) == 25
-    #     calculator.divison('100','2')
-    #     time.sleep(2) 
-    #     assert int(calculator.elements.screen.value) == 50
-    #     calculator.history()
-    #     time.sleep(10)
+    def test_verify(self):
+        loginPage = LoginPage(self.driver)
+        loginPage.login('admin', 'test1234')
+        calculator = CalculatorPage(self.driver)
+        calculator.addition('5','5')
+        time.sleep(2) 
+        assert int(calculator.elements.screen.value) == 10
+        calculator.subtract('9','4')
+        time.sleep(2) 
+        assert int(calculator.elements.screen.value) == 5
+        calculator.multiple('5','5')
+        time.sleep(2) 
+        assert int(calculator.elements.screen.value) == 25
+        calculator.divison('100','2')
+        time.sleep(2) 
+        assert int(calculator.elements.screen.value) == 50
+        calculator.history()
+        time.sleep(10)
  
     
      
