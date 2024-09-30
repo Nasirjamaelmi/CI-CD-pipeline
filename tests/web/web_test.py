@@ -2,6 +2,7 @@ import time
 import string
 import random
 from assertpy import assert_that
+
 from tests.web.test_base import WebBase
 from tests.web.pages.login_page import LoginPage
 from tests.web.pages.register_page import RegisterPage
@@ -14,14 +15,19 @@ class TestWeb(WebBase):
         return ''.join(random.choice(letters) for i in range(length))
 
 
+    def generateUser():
+        letters = string.ascii_lowercase
+        return ''.join(random.choice(letters))
+
     def test_login(self):
         LoginPage(self.driver).login('admin', 'test1234')
        
         assert CalculatorPage(self.driver).elements.username.text == 'admin'
         
-        
+
         
     
+
     def test_register(self):
         loginPage = LoginPage(self.driver)
         loginPage.click_Register()
@@ -44,6 +50,7 @@ class TestWeb(WebBase):
         assert_that(int(calculator.elements.screen.value)).is_equal_to(25)
         calculator.divison('100','2')
         assert_that(int(calculator.elements.screen.value)).is_equal_to(50)
+
         
 
     def test_verify(self):
@@ -51,7 +58,7 @@ class TestWeb(WebBase):
         loginPage.login('admin', 'test1234')
         calculator = CalculatorPage(self.driver)
         calculator.addition('5','5')
-        
+
         assert int(calculator.elements.screen.value) == 10
         calculator.subtract('9','4')
       
@@ -64,6 +71,7 @@ class TestWeb(WebBase):
         assert int(calculator.elements.screen.value) == 50
         calculator.history()
         
+
  
     
      

@@ -8,6 +8,7 @@ class CalculatorPage(PageBase):
         PageBase.__init__(self, driver = driver)
         
         page_elements = {
+
             'username': Element('//label[@id="user-name"]', self).find(),
             'screen': Element('//*[@id="calculator-screen"]',self).find(),
             'add': Element('//*[@id="key-add"]',self).find(),
@@ -30,6 +31,7 @@ class CalculatorPage(PageBase):
             'logout_button' : Element('//button[@id="logout-button"]', self).find(),
        
                
+
         }
         
         self.elements = munchify(page_elements)
@@ -42,10 +44,7 @@ class CalculatorPage(PageBase):
    
     
         
-        
     
-        
-       
         
      
     

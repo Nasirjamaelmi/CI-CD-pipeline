@@ -13,7 +13,6 @@ class LoginPage(PageBase):
             'login': Element('//button[@id="login"]', self),
             'register': Element('//button[@id="register"]', self)
         }
-
         self.elements = munchify(self.page_elements)
     
     def login(self, username, password):
