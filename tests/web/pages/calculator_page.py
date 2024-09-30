@@ -36,10 +36,50 @@ class CalculatorPage(PageBase):
         
         self.elements = munchify(page_elements)
         
-    # def login(self, username, password):
-    #     self.elements.username.set(username)
-    #     self.elements.password.set(password)
-    #     self.elements.login.click()
+    def number(self,number):
+        for digit in str(number):
+            self.elements[digit].find().click()
+
+    def addition(self,value, value2):
+        self.number(value)
+
+        self.elements.add.click()
+
+        self.number(value2)
+
+        self.elements.equal.click()
+
+    def subtract(self,value,value2):
+        self.number(value)
+
+        self.elements.subtract.click()
+
+        self.number(value2)
+
+        self.elements.equal.click()
+
+    def multiple(self,value,value2):
+
+        self.number(value)
+
+        self.elements.multiple.click()
+
+        self.number(value2)
+
+        self.elements.equal.click()
+
+    def divison(self,value,value2):
+
+        self.number(value)
+
+        self.elements.divison.click()
+
+        self.number(value2)
+
+        self.elements.equal.click()
+
+    def history(self):
+        self.elements.show.click()
     
    
     
