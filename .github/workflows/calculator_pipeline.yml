@@ -34,9 +34,17 @@ jobs:
       - name: install dependies
         run: pip install -r BE/requirements.txt
 
-      - name: install Rest api
-        run: python BE/calculator.py --rest &
+      name: Start Selenium Docker container
+      run: |
+        docker run --name selenium -d --add-host host.docker.internal:host-gateway -p 4444:4444 -p 5900:5900 --shm-size="2g" selenium/standalone-chrome:4.2.1-20220531
+        sleep 10  # Give Selenium some time to start up
 
+      name: Start Calculator with Docker Compose
+      run: |
+        cd pipeline
+        docker compose -p webcalculator up -d
+        sleep 5  # Give the services some time to start up
+        
       - name: run pytest
         run:  pytest --junit-xml=report.xml
 

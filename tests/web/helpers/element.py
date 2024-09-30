@@ -23,7 +23,7 @@ class Element:
 
     @property
     def text(self):
-        return self.page.wait.until(EC.presence_of_element_located((By.XPATH, self.locator))).text
+        return self.page.wait.until(EC.visibility_of_element_located((By.XPATH, self.locator))).text
 
     @property
     def value(self):
