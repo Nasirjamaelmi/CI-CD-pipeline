@@ -2,7 +2,6 @@ import time
 import string
 import random
 from assertpy import assert_that
-
 from tests.web.test_base import WebBase
 from tests.web.pages.login_page import LoginPage
 from tests.web.pages.register_page import RegisterPage
@@ -21,8 +20,8 @@ class TestWeb(WebBase):
 
     def test_login(self):
         LoginPage(self.driver).login('admin', 'test1234')
-       
-        assert CalculatorPage(self.driver).elements.username.text == 'admin'
+        CalculatorPage(self.driver).elements.username.find( )
+        assert_that(CalculatorPage(self.driver).elements.username.text).is_equal_to('admin')
         
 
         
@@ -34,7 +33,7 @@ class TestWeb(WebBase):
         registerPage = RegisterPage(self.driver)
         unique_username = self.generate_random_username()
         registerPage.register(unique_username, 'itadori' , 'itadori')
-        #time.sleep(4)
+        time.sleep(5)
         assert_that(CalculatorPage(self.driver).elements.username.text).is_equal_to(unique_username) 
     
     def test_calc(self): 
@@ -58,17 +57,17 @@ class TestWeb(WebBase):
         loginPage.login('admin', 'test1234')
         calculator = CalculatorPage(self.driver)
         calculator.addition('5','5')
-
-        assert int(calculator.elements.screen.value) == 10
+        assert_that(int(calculator.elements.screen.value)).is_equal_to(10)
+        
         calculator.subtract('9','4')
-      
-        assert int(calculator.elements.screen.value) == 5
+        assert_that(int(calculator.elements.screen.value)).is_equal_to(5)
+        
         calculator.multiple('5','5')
-       
-        assert int(calculator.elements.screen.value) == 25
+        assert_that(int(calculator.elements.screen.value)).is_equal_to(25)
+        
         calculator.divison('100','2')
-       
-        assert int(calculator.elements.screen.value) == 50
+        assert_that(int(calculator.elements.screen.value)).is_equal_to(50)
+        
         calculator.history()
         
 

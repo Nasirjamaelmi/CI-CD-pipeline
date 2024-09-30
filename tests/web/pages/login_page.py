@@ -19,6 +19,7 @@ class LoginPage(PageBase):
         self.elements.username.set(username)
         self.elements.password.set(password)
         self.elements.login.click()
+        
+    def click_Register(self):
         self.elements.register.click()
-  
        
