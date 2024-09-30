@@ -16,8 +16,9 @@ class TestWeb(WebBase):
 
     def test_login(self):
         LoginPage(self.driver).login('admin', 'test1234')
-        time.sleep(10)
-        assert_that(CalculatorPage(self.driver).elements.username.text).is_equal_to('admin')
+       
+        assert CalculatorPage(self.driver).elements.username.text == 'admin'
+        
         
         
     
@@ -27,7 +28,7 @@ class TestWeb(WebBase):
         registerPage = RegisterPage(self.driver)
         unique_username = self.generate_random_username()
         registerPage.register(unique_username, 'itadori' , 'itadori')
-        time.sleep(4)
+        #time.sleep(4)
         assert_that(CalculatorPage(self.driver).elements.username.text).is_equal_to(unique_username) 
     
     def test_calc(self): 
@@ -50,19 +51,19 @@ class TestWeb(WebBase):
         loginPage.login('admin', 'test1234')
         calculator = CalculatorPage(self.driver)
         calculator.addition('5','5')
-        time.sleep(2) 
+        
         assert int(calculator.elements.screen.value) == 10
         calculator.subtract('9','4')
-        time.sleep(2) 
+      
         assert int(calculator.elements.screen.value) == 5
         calculator.multiple('5','5')
-        time.sleep(2) 
+       
         assert int(calculator.elements.screen.value) == 25
         calculator.divison('100','2')
-        time.sleep(2) 
+       
         assert int(calculator.elements.screen.value) == 50
         calculator.history()
-        time.sleep(10)
+        
  
     
      
